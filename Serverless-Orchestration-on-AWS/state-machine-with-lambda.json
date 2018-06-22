@@ -1,0 +1,50 @@
+{
+    "Comment": "A state machine that submits a Job to AWS Batch and monitors the Job until it completes.",
+    "StartAt": "Submit Job",
+    "States": {
+        "Submit Job": {
+            "Type": "Task",
+            "Resource": "arn:aws:lambda:us-east-1:306255272183:function:StepFunctionsSample-JobStatusPol-SubmitJobFunction-6Z182W8ERLT2",
+            "ResultPath": "$.guid",
+            "Next": "Wait X Seconds"
+        },
+        "Wait X Seconds": {
+            "Type": "Wait",
+            "SecondsPath": "$.wait_time",
+            "Next": "Get Job Status"
+        },
+        "Get Job Status": {
+            "Type": "Task",
+            "Resource": "arn:aws:lambda:us-east-1:306255272183:function:StepFunctionsSample-JobStatusPoll-CheckJobFunction-1IGFUHZPQDVRG",
+            "Next": "Job Complete?",
+            "InputPath": "$.guid",
+            "ResultPath": "$.status"
+        },
+        "Job Complete?": {
+            "Type": "Choice",
+            "Choices": [{
+                    "Variable": "$.status",
+                    "StringEquals": "FAILED",
+                    "Next": "Job Failed"
+                },
+                {
+                    "Variable": "$.status",
+                    "StringEquals": "SUCCEEDED",
+                    "Next": "Get Final Job Status"
+                }
+            ],
+            "Default": "Wait X Seconds"
+        },
+        "Job Failed": {
+            "Type": "Fail",
+            "Cause": "AWS Batch Job Failed",
+            "Error": "DescribeJob returned FAILED"
+        },
+        "Get Final Job Status": {
+            "Type": "Task",
+            "Resource": "arn:aws:lambda:us-east-1:306255272183:function:StepFunctionsSample-JobStatusPoll-CheckJobFunction-1IGFUHZPQDVRG",
+            "InputPath": "$.guid",
+            "End": true
+        }
+    }
+}
