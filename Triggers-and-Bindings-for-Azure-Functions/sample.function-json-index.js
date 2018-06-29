@@ -1,11 +1,11 @@
 module.exports = function (context, cartItems) {
     cartItems.PartitionKey = "ItemCode";
-    cartItems.cartId = generateRandomId(); 
+    cartItems.cartId = generateRandomCartId(); 
 
     context.done(null, cartItems);
 };
 
-function generateRandomId() {
-    return Math.random().toString(36).substring(2, 15) +
-        Math.random().toString(36).substring(2, 15);
+function generateRandomCartId() {
+    return Math.random().toString(40).substring(3, 18) +
+        Math.random().toString(40).substring(3, 18);
 }
