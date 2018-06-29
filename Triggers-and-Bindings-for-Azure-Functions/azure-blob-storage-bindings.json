@@ -1,0 +1,25 @@
+{
+    "bindings": [{
+            "queueName": "cartItems",
+            "connection": "MyStorageSetting",
+            "name": "cartItem",
+            "type": "queueTrigger",
+            "direction": "in"
+        },
+        {
+            "name": "kuldeepsInputBlob",
+            "type": "blob",
+            "path": "bookChapters/{queueTrigger}",
+            "connection": "MyStorageSetting",
+            "direction": "in"
+        },
+        {
+            "name": "kuldeepsOutputBlob",
+            "type": "blob",
+            "path": "bookChapters/{queueTrigger}-Copy",
+            "connection": "MyStorageSetting",
+            "direction": "out"
+        }
+    ],
+    "disabled": false
+}
