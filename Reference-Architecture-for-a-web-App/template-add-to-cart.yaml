@@ -1,7 +1,7 @@
 AWSTemplateFormatVersion: '2010-09-09'
 Transform: AWS::Serverless-2016-10-31
 Description: >
-    Add to Cart Web App
+    Reference Add to Cart Web App
 
     AWS SAM Template for Add to Cart
 Globals:
