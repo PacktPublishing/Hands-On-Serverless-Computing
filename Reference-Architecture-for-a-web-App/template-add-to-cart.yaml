@@ -1,0 +1,77 @@
+AWSTemplateFormatVersion: '2010-09-09'
+Transform: AWS::Serverless-2016-10-31
+Description: >
+    Add to Cart Web App
+
+    AWS SAM Template for Add to Cart
+Globals:
+    Function:
+        Timeout: 10
+
+Resources:
+
+    AddToCartIngestionFunction:
+      Type: AWS::Serverless::Function
+      Properties:
+          CodeUri: .
+          Handler: index.handler
+          Runtime: nodejs8.10
+          Policies:
+            - DynamoDBCrudPolicy:
+                TableName: !Ref CartItemsDynamoDB
+          Events:
+              AddToCartIngestion:
+                  Type: Api
+                  Properties:
+                      Path: /cart
+                      Method: post
+    CartItemsDynamoDB:
+      Type: AWS::DynamoDB::Table
+      Properties:
+        AttributeDefinitions: 
+          - 
+            AttributeName: "cartId"
+            AttributeType: "S"
+          - 
+            AttributeName: "hotelId"
+            AttributeType: "N"
+          - 
+            AttributeName: "customerId"
+            AttributeType: "N"
+          - 
+            AttributeName: "tripStartDate"
+            AttributeType: "N"
+          - 
+            AttributeName: "tripEndDate"
+            AttributeType: "N"
+          - 
+            AttributeName: "adults"
+            AttributeType: "N"   
+          - 
+            AttributeName: "children"
+            AttributeType: "N"                                 
+        KeySchema: 
+          - 
+            AttributeName: "cartId"
+            KeyType: "HASH"
+          - 
+            AttributeName: "hotelId"
+            KeyType: "RANGE"
+        ProvisionedThroughput: 
+          ReadCapacityUnits: 5
+          WriteCapacityUnits: 5
+        TableName: "cart-items"
+
+Outputs:
+
+    AddToCartIngestionApi:
+      Description: "API Gateway endpoint URL for Prod stage for Add to Cart function"
+      Value: !Sub "https://${ServerlessRestApi}.execute-api.${AWS::Region}.amazonaws.com/Prod/"
+
+    AddToCartIngestionFunction:
+      Description: "Add to Cart Lambda Function ARN"
+      Value: !GetAtt AddToCartIngestionFunction.Arn
+
+    AddToCartIngestionFunctionIamRole:
+      Description: "Implicit IAM Role created for Add to Cart Lambda function"
+      Value: !GetAtt AddToCartIngestionFunctionRole.Arn
