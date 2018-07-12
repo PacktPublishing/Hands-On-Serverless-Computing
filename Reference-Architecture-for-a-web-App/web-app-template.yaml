@@ -23,7 +23,7 @@ Resources:
               SearchHotelsIngestion:
                   Type: Api
                   Properties:
-                      Path: /
+                      Path: /hotels
                       Method: get
     HotelsListDynamoDB:
       Type: AWS::DynamoDB::Table
