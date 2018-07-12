@@ -1,0 +1,71 @@
+AWSTemplateFormatVersion: '2010-09-09'
+Transform: AWS::Serverless-2016-10-31
+Description: >
+    Reference Photo Processing Application with fan out architecture
+
+    AWS SAM Template for Photo Processing Application
+Globals:
+    Function:
+        Timeout: 10
+
+Resources:
+
+    ThumbNailGenerationFunction:
+      Type: AWS::Serverless::Function
+      Properties:
+          CodeUri: .
+          Handler: index.handler
+          Runtime: nodejs8.10
+          Policies:
+            - AmazonS3FullAccessPolicy
+          Events:
+            SNS1:
+              Type: SNS
+              Properties:
+                Topic:
+                  Ref: PhotoUploadTopic
+    IconGenerationFunction:
+      Type: AWS::Serverless::Function
+      Properties:
+          CodeUri: .
+          Handler: index.handler
+          Runtime: nodejs8.10
+          Policies:
+            - AmazonS3FullAccessPolicy
+          Events:
+            SNS1:
+              Type: SNS
+              Properties:
+                Topic:
+                  Ref: PhotoUploadTopic
+    HighResolutionGenerationFunction:
+      Type: AWS::Serverless::Function
+      Properties:
+          CodeUri: .
+          Handler: index.handler
+          Runtime: nodejs8.10
+          Policies:
+            - AmazonS3FullAccessPolicy
+          Events:
+            SNS1:
+              Type: SNS
+              Properties:
+                Topic:
+                  Ref: PhotoUploadTopic
+    PhotoUploadTopic:
+      Type: 'AWS::SNS::Topic'
+    PhotosUpload:
+      Type: AWS::S3::Bucket
+Outputs:
+
+    ThumbNailGenerationFunction:
+      Description: "ThumbNail Generation Lambda Function ARN"
+      Value: !GetAtt ThumbNailGenerationFunction.Arn
+
+    IconGenerationFunction:
+      Description: "Icon Generation Lambda Function ARN"
+      Value: !GetAtt IconGenerationFunction.Arn
+
+    HighResolutionGenerationFunction:
+      Description: "High Resolution Generation Lambda Function ARN"
+      Value: !GetAtt HighResolutionGenerationFunction.Arn
