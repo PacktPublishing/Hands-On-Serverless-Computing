@@ -1,0 +1,77 @@
+AWSTemplateFormatVersion: '2010-09-09'
+Transform: AWS::Serverless-2016-10-31
+Description: >
+    Hotels Web App
+
+    AWS SAM Template for Hotels Web App
+Globals:
+    Function:
+        Timeout: 10
+
+Resources:
+
+    SearchHotelsIngestionFunction:
+      Type: AWS::Serverless::Function
+      Properties:
+          CodeUri: .
+          Handler: index.handler
+          Runtime: nodejs8.10
+          Policies:
+            - DynamoDBCrudPolicy:
+                TableName: !Ref HotelsListDynamoDB
+          Events:
+              SearchHotelsIngestion:
+                  Type: Api
+                  Properties:
+                      Path: /
+                      Method: get
+    HotelsListDynamoDB:
+      Type: AWS::DynamoDB::Table
+      Properties:
+        AttributeDefinitions: 
+          - 
+            AttributeName: "hotelName"
+            AttributeType: "S"
+          - 
+            AttributeName: "hotelId"
+            AttributeType: "N"
+        KeySchema: 
+          - 
+            AttributeName: "hotelName"
+            KeyType: "HASH"
+          - 
+            AttributeName: "hotelId"
+            KeyType: "RANGE"
+        ProvisionedThroughput: 
+          ReadCapacityUnits: 5
+          WriteCapacityUnits: 5
+        TableName: "hotels-list"
+        GlobalSecondaryIndexes: 
+        - 
+          IndexName: "hotelId-hotelName"
+          KeySchema: 
+            - 
+              AttributeName: "hotelId"
+              KeyType: "HASH"
+            - 
+              AttributeName: "hotelName"
+              KeyType: "RANGE"
+          Projection:
+            ProjectionType: "ALL"
+          ProvisionedThroughput: 
+            ReadCapacityUnits: 5
+            WriteCapacityUnits: 5
+
+Outputs:
+
+    SearchHotelsIngestionApi:
+      Description: "API Gateway endpoint URL for Prod stage for Search Hotels function"
+      Value: !Sub "https://${ServerlessRestApi}.execute-api.${AWS::Region}.amazonaws.com/Prod/"
+
+    SearchHotelsIngestionFunction:
+      Description: "Search Hotels Lambda Function ARN"
+      Value: !GetAtt SearchHotelsIngestionFunction.Arn
+
+    SearchHotelsIngestionFunctionIamRole:
+      Description: "Implicit IAM Role created for Search Hotels Lambda function"
+      Value: !GetAtt SearchHotelsIngestionFunctionRole.Arn
