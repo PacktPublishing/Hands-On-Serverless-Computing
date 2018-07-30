@@ -51,7 +51,7 @@ With the following software and hardware list you can run all code files present
 | 7 | Microsoft Azure | Windows, Mac OS X, and Linux (Any) |
 | 8 | Google cloud Functions | Windows, Mac OS X, and Linux (Any)|
 | 9 | Google cloud Functions | Windows, Mac OS X, and Linux (Any)|
-| 10| Google cloud Functions | Windows, Mac OS X, and Linux (Any)|
+| 10 | Google cloud Functions | Windows, Mac OS X, and Linux (Any)|
 | 11 | Google cloud Functions | Windows, Mac OS X, and Linux (Any)|
 | 12 | Google cloud Functions | Windows, Mac OS X, and Linux (Any)|
 | 13 | Google cloud Functions | Windows, Mac OS X, and Linux (Any)|
