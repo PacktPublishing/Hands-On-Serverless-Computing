@@ -10,14 +10,11 @@ This is the code repository for [Hands-On Serverless Computing](https://www.pack
 Serverless applications and architectures are gaining momentum and are increasingly being used by companies of all sizes. Serverless software takes care of many problems that developers face when running systems and servers, such as fault tolerance, centralized logging, horizontal scalability, and deployments.
 
 This book covers the following exciting features:
-Understand the benefts of serverless computing and know when to use it 
-Develop serverless applications on AWS, Azure, and Google Cloud 
-Get to grips with Function as a Service (FaaS) 
-Apply triggers to serverless functions 
-Build event-driven apps using serverless frameworks 
-Use the Node.js programming language to build serverless apps 
-Use code editors, such as Visual Studio Code, as development environments 
-Master the best development practices for creating scalable and practical solutions 
+* Understand the benefits of serverless computing and know when to use it 
+* Develop serverless applications on AWS, Azure, and Google Cloud 
+* Get to grips with Function as a Service (FaaS) 
+* Apply triggers to serverless functions 
+* Build event-driven apps using serverless frameworks  
 
 If you feel this book is for you, get your [copy](https://www.amazon.com/dp/9781788836654) today!
 
@@ -52,29 +49,25 @@ With the following software and hardware list you can run all code files present
 | 3 | AWS Lambda | Windows, Mac OS X, and Linux (Any) |
 | 5 | AWS account  | Windows, Mac OS X, and Linux (Any) |
 | 7 | Microsoft Azure | Windows, Mac OS X, and Linux (Any) |
-| 10 |Google Cloud Functions| Windows, Mac OS X, and Linux (Any) |
-| 11 |Google Cloud Functions| Windows, Mac OS X, and Linux (Any) |
-| 12 |Google Cloud Functions| Windows, Mac OS X, and Linux (Any) |
-| 13 |Google Cloud Functions| Windows, Mac OS X, and Linux (Any) |
-| 14 |Google Cloud Functions| Windows, Mac OS X, and Linux (Any) |
+| 8 | Google cloud Functions | Windows, Mac OS X, and Linux (Any)|
+| 9 | Google cloud Functions | Windows, Mac OS X, and Linux (Any)|
+| 10| Google cloud Functions | Windows, Mac OS X, and Linux (Any)|
+| 11 | Google cloud Functions | Windows, Mac OS X, and Linux (Any)|
+| 12 | Google cloud Functions | Windows, Mac OS X, and Linux (Any)|
+| 13 | Google cloud Functions | Windows, Mac OS X, and Linux (Any)|
+| 14 | Google cloud Functions | Windows, Mac OS X, and Linux (Any)|
 
 We also provide a PDF file that has color images of the screenshots/diagrams used in this book. [Click here to download it](https://www.packtpub.com/sites/default/files/downloads/HandsOnServerlessComputing_ColorImages.pdf).
 
 ### Related products
-*  [[Packt]]() [[Amazon]](https://www.amazon.com/dp/)
+*  [[Packt]](https://www.packtpub.com/virtualization-and-cloud/azure-serverless-computing-cookbook) [[Amazon]](https://www.amazon.com/dp/1788836650)
 
-*  [[Packt]]() [[Amazon]](https://www.amazon.com/dp/)
+*  [[Packt]](https://www.packtpub.com/virtualization-and-cloud/docker-serverless-applications) [[Amazon]](https://www.amazon.com/dp/1788835263)
 
-*  [[Packt]]() [[Amazon]](https://www.amazon.com/dp/)
-
-*  [[Packt]]() [[Amazon]](https://www.amazon.com/dp/)
 
 ## Get to Know the Author
 **Kuldeep Chowhan**
 Kuldeep Chowhan is a Principal Software Developer at Expedia Group. He has been involved in building tools and platforms for the last 5+ years at Expedia. He has extensive experience on using serverless technologies on AWS (such as AWS Lambda, API Gateway, and DynamoDB) through Node.js. He has built a Platform as a Service (PaaS) tool for the automated creation of source code, a CI/CD pipeline, and a fully automated pipeline for deploying Docker containers/AWS Lambda. He is also passionate about CI/CD and DevOps.
 
-
 ### Suggestions and Feedback
 [Click here](https://docs.google.com/forms/d/e/1FAIpQLSdy7dATC6QmEL81FIUuymZ0Wy9vH1jHkvpY57OiMeKGqib_Ow/viewform) if you have any feedback or suggestions.
-
-
