@@ -47,7 +47,7 @@ With the following software and hardware list you can run all code files present
 
 | 2 | Visual Studio Code, Node.js, JavaScript, Postman | Windows, Mac OS X, and Linux (Any) |
 | 3 | AWS Lambda | Windows, Mac OS X, and Linux (Any) |
-| 5 | AWS account  | Windows, Mac OS X, and Linux (Any) |
+| 5 | AWS account | Windows, Mac OS X, and Linux (Any) |
 | 7 | Microsoft Azure | Windows, Mac OS X, and Linux (Any) |
 | 8 | Google cloud Functions | Windows, Mac OS X, and Linux (Any)|
 | 9 | Google cloud Functions | Windows, Mac OS X, and Linux (Any)|
