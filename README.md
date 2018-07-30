@@ -44,14 +44,13 @@ With the following software and hardware list you can run all code files present
 ### Software and Hardware List
 | Chapter | Software required | OS required |
 | -------- | ------------------------------------ | ----------------------------------- |
-
 | 2 | Visual Studio Code, Node.js, JavaScript, Postman | Windows, Mac OS X, and Linux (Any) |
 | 3 | AWS Lambda | Windows, Mac OS X, and Linux (Any) |
-| 5 | AWS account | Windows, Mac OS X, and Linux (Any) |
+| 5 | AWS account  | Windows, Mac OS X, and Linux (Any) |
 | 7 | Microsoft Azure | Windows, Mac OS X, and Linux (Any) |
 | 8 | Google cloud Functions | Windows, Mac OS X, and Linux (Any)|
 | 9 | Google cloud Functions | Windows, Mac OS X, and Linux (Any)|
-| 10 | Google cloud Functions | Windows, Mac OS X, and Linux (Any)|
+| 10| Google cloud Functions | Windows, Mac OS X, and Linux (Any)|
 | 11 | Google cloud Functions | Windows, Mac OS X, and Linux (Any)|
 | 12 | Google cloud Functions | Windows, Mac OS X, and Linux (Any)|
 | 13 | Google cloud Functions | Windows, Mac OS X, and Linux (Any)|
@@ -71,3 +70,5 @@ Kuldeep Chowhan is a Principal Software Developer at Expedia Group. He has been 
 
 ### Suggestions and Feedback
 [Click here](https://docs.google.com/forms/d/e/1FAIpQLSdy7dATC6QmEL81FIUuymZ0Wy9vH1jHkvpY57OiMeKGqib_Ow/viewform) if you have any feedback or suggestions.
+
+
