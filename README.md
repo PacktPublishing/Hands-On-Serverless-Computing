@@ -1,8 +1,3 @@
-## $5 Tech Unlocked 2021!
-[Buy and download this Book for only $5 on PacktPub.com](https://www.packtpub.com/product/hands-on-serverless-computing/9781788836654)
------
-*If you have read this book, please leave a review on [Amazon.com](https://www.amazon.com/gp/product/1788836650).     Potential readers can then use your unbiased opinion to help them make purchase decisions. Thank you. The $5 campaign         runs from __December 15th 2020__ to __January 13th 2021.__*
-
 # Hands-On Serverless Computing
 
 <a href="https://www.packtpub.com/virtualization-and-cloud/hands-serverless-computing?utm_source=github&utm_medium=repository&utm_campaign=9781788836654 "><img src="https://dz13w8afd47il.cloudfront.net/sites/default/files/imagecache/ppv4_main_book_cover/B09779_MockupCover_0.png" alt="Hands-On Serverless Computing" height="256px" align="right"></a>
